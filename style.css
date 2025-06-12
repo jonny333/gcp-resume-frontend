@@ -1,0 +1,281 @@
+/* Basic Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fdfdfd; /* Slightly off-white background */
+    padding: 20px;
+}
+
+.resume-container {
+    max-width: 1000px; /* Adjust as needed */
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+/* Header Styles */
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.resume-header h1 {
+    font-size: 2.8em; /* Larger name */
+    color: #1a535c; /* A teal/dark green shade, adjust to match */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-info p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.contact-info p span {
+    display: block; /* Each item on a new line */
+    margin-bottom: 5px;
+}
+.contact-info p span i {
+    margin-right: 8px;
+    color: #1a535c; /* Icon color */
+    width: 15px; /* Ensure icons align */
+    text-align: center;
+}
+
+
+.profile-picture img {
+    width: 120px; /* Adjust size as needed */
+    height: 120px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensure image covers the area well */
+    border: 3px solid #1a535c; /* Optional border */
+}
+
+/* Two-column Layout */
+.resume-body {
+    display: flex;
+    gap: 30px; /* Space between main content and sidebar */
+}
+
+.main-content {
+    flex: 2; /* Takes 2/3 of the space */
+}
+
+.sidebar {
+    flex: 1; /* Takes 1/3 of the space */
+}
+
+/* General Section Styles */
+section {
+    margin-bottom: 25px;
+}
+
+section h2 {
+    font-size: 1.4em;
+    color: #1a535c;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #1a535c; /* Underline for section titles */
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Experience Section Styles */
+.experience article, .education article, .certifications article {
+    margin-bottom: 20px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.experience h3, .education h3, .certifications h3 {
+    font-size: 1.15em;
+    color: #2c3e50; /* Darker text for titles */
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+
+.experience h4, .education h4, .certifications h4 {
+    font-size: 1em;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.date, .location {
+    font-size: 0.85em;
+    color: #777;
+}
+.date i, .location i {
+    margin-right: 5px;
+    color: #1a535c;
+}
+
+.experience ul {
+    list-style-position: outside;
+    padding-left: 20px;
+}
+
+.experience ul li {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: #444;
+}
+
+/* Education Section specific */
+.education p {
+    display: flex;
+    justify-content: space-between; /* Pushes date and location apart */
+    align-items: center;
+}
+
+/* Languages Section Styles */
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+.language-item > span { /* The language name */
+    flex-basis: 40%; /* Give it some fixed space */
+    font-weight: bold;
+    color: #333;
+}
+
+.proficiency {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end; /* Align proficiency to the right */
+}
+.proficiency .level-text {
+    margin-right: 10px;
+    color: #666;
+    min-width: 80px; /* Ensure text alignment */
+    text-align: right;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #ddd; /* Empty dot */
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 4px;
+    border: 1px solid #ccc;
+}
+
+.dot.filled {
+    background-color: #1a535c; /* Filled dot color */
+    border-color: #1a535c;
+}
+
+/* Skills Section Styles */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-list span {
+    background-color: #e9f3f4; /* Light background for skills */
+    color: #1a535c;
+    padding: 5px 10px;
+    border-radius: 15px; /* Rounded badges */
+    font-size: 0.9em;
+    border: 1px solid #cde0e2;
+}
+
+/* Responsive Design (Simple Stack for Mobile) */
+@media (max-width: 768px) {
+    .resume-body {
+        flex-direction: column;
+    }
+    .resume-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-info p span {
+        display: inline-block; /* Contact items side-by-side on small screens if space allows */
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .contact-info p span:last-child {
+        margin-right: 0;
+    }
+    .profile-picture {
+        margin-top: 20px; /* Space between contact and photo */
+    }
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .job-header .date {
+        margin-top: 5px;
+    }
+    .language-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .language-item .proficiency {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 5px;
+    }
+    .proficiency .level-text {
+        min-width: auto;
+        text-align: left;
+    }
+}
+
+/* Extended Functionality: Print Styles (Optional) */
+@media print {
+    body {
+        padding: 0;
+        background-color: #fff;
+        font-size: 10pt; /* Adjust for print */
+    }
+    .resume-container {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+        padding: 1cm; /* Print margins */
+    }
+    .profile-picture img {
+        border: 1px solid #333; /* Simpler border for print */
+    }
+    .skill-list span {
+        background-color: #f0f0f0; /* Lighter for print, save ink */
+        color: #000;
+        border: 1px solid #ccc;
+    }
+    /* Hide elements not relevant for print if any */
+    /* .some-interactive-button { display: none; } */
+    .resume-header h1, section h2, .contact-info p span i, .date i, .location i, .dot.filled {
+        color: #000 !important; /* Ensure black for print for main accent colors */
+    }
+    .dot {
+        border-color: #000;
+    }
+    .dot.filled {
+        background-color: #000 !important;
+    }
+}
